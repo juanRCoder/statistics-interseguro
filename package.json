@@ -1,0 +1,30 @@
+{
+  "name": "my-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "description": "This is a monorepo with include only React + Node/Express",
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.3",
+    "@commitlint/config-conventional": "^20.4.3",
+    "@eslint/js": "^9.39.3",
+    "eslint": "^9.39.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.3",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1"
+  },
+  "scripts": {
+    "dev": "pnpm --filter ./frontend/* dev && pnpm --filter ./backend/* dev",
+    "format:fix": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "backend/**/*.{ts,js}": "pnpm --filter backend lint",
+    "frontend/**/*.{ts,tsx,js,jsx}": "pnpm --filter frontend lint"
+  },
+  "dependencies": {
+    "vitest": "^4.1.0"
+  }
+}
