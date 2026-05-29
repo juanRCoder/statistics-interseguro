@@ -1,20 +1,25 @@
-import js from '@eslint/js';
-import globals from 'globals';
+import pluginVue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
-import { defineConfig, globalIgnores } from 'eslint/config';
+import vueparser from 'vue-eslint-parser';
+import tsparser from '@typescript-eslint/parser';
 
-export default defineConfig([
-  globalIgnores(['dist']),
+export default tseslint.config(
   {
-    files: ['**/*.{ts,tsx}'],
-    extends: [js.configs.recommended, tseslint.configs.recommended],
+    ignores: ['dist/**', 'node_modules/**'],
+  },
+  ...tseslint.configs.recommended,
+  {
+    files: ['**/*.vue'],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
+      parser: vueparser,
       parserOptions: {
-        project: ['./tsconfig.app.json', './tsconfig.node.json'],
-        tsconfigRootDir: import.meta.dirname,
+        parser: tsparser,
       },
     },
-  },
-]);
+    plugins: { vue: pluginVue },
+    rules: {
+      'vue/multi-word-component-names': 'off',
+      'vue/no-unused-vars': 'error',
+    },
+  }
+);

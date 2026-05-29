@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  api-go:
+    build:
+      context: ./api-go
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    depends_on:
+      - api-node
+    restart: unless-stopped
+
+  api-node:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - '3005:3005'
+    restart: unless-stopped
