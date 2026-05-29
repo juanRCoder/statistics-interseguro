@@ -18,7 +18,7 @@ func main() {
 	}))
 
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.JSON(fiber.Map{"message": "go API is running!"})
+		return c.JSON(fiber.Map{"message": "go API is running server!"})
 	})
 
 	app.Post("/api/qr", controllers.GetQR)

@@ -2,6 +2,8 @@
 
 Aplicación web para **factorización QR de matrices**, rotación y estadísticas descriptivas.
 
+<img src="./frontend/public/capture_project.png" alt="statistics-interseguro preview" width="100%" />
+
 ## ¿Qué hace?
 
 1. El usuario ingresa una matriz numérica (de 2×2 hasta 6×6) en la interfaz web.
@@ -33,19 +35,24 @@ statistics-interseguro/
 docker compose up --build
 ```
 
-- Frontend → [http://localhost](http://localhost)
 - API Go → [http://localhost:8080](http://localhost:8080)
 - API Node → [http://localhost:3005](http://localhost:3005)
 
 ## Desarrollo local
 
 ```bash
+# API Go
+cd api-go
+go mod download
+go run main.go
+
+# API Node
+cd backend
+pnpm install
+pnpm dev
+
 # Frontend
 cd frontend
 pnpm install
 pnpm dev
-
-# API Go
-cd api-go
-go run main.go
 ```

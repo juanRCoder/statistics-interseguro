@@ -4,7 +4,7 @@
       <div class="header-inner">
         <div class="logo">
           <span class="logo-icon">◈</span>
-          <span class="logo-text">Code<strong> Challenge</strong></span>
+          <span class="logo-text">Code<strong> Challenge!</strong></span>
         </div>
         <p class="header-sub">Factorización QR · Rotación · Estadísticas</p>
       </div>

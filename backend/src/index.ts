@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3005;
 app.use(express.json());
 
 app.get('/', (_req, res: Response) => {
-  res.json({ message: 'node API is running!' });
+  res.json({ message: 'node API is running server!' });
 });
 
 app.post('/api/statistics', (req: Request, res: Response) => {
