@@ -11,6 +11,13 @@
     </header>
 
     <main class="main">
+      <button
+        class="btn-primary custom"
+        @click="openApi"
+        style="margin-bottom: 1rem"
+      >
+        Despertar API Node antes de calcular
+      </button>
       <section class="card input-card">
         <h2 class="section-title">Configurar matriz</h2>
 
@@ -200,6 +207,9 @@ import { ref } from 'vue';
 import type { QRResult } from '../utils/matrixUtils';
 import { formatVal, resizeMatrix } from '../utils/matrixUtils';
 import { computeQR } from '../services/matrixService';
+const openApi = () => {
+  window.open('https://statistics-interseguro-api-node.onrender.com', '_blank');
+};
 
 const rows = ref<number>(2);
 const cols = ref<number>(2);
