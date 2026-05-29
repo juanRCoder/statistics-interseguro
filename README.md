@@ -2,7 +2,7 @@
 
 Aplicación web para **factorización QR de matrices**, rotación y estadísticas descriptivas.
 
-<img src="./frontend/public/capture_project.png" alt="statistics-interseguro preview" width="100%" />
+<img src="https://raw.githubusercontent.com/juanRCoder/statistics-interseguro/main/frontend/public/capture_project.png" alt="preview" width="450" />
 
 ## ¿Qué hace?
 
