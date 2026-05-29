@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import MatrixApp from './components/MatrixApp.vue';
 </script>
 
 <template>
-  <HelloWorld />
+  <MatrixApp />
 </template>

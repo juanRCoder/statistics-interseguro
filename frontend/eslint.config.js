@@ -5,15 +5,22 @@ import tsparser from '@typescript-eslint/parser';
 
 export default tseslint.config(
   {
-    ignores: ['dist/**', 'node_modules/**'],
+    ignores: ['dist/**', 'node_modules/**', 'eslint.config.js'],
   },
   ...tseslint.configs.recommended,
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      parser: tsparser,
+    },
+  },
   {
     files: ['**/*.vue'],
     languageOptions: {
       parser: vueparser,
       parserOptions: {
         parser: tsparser,
+        extraFileExtensions: ['.vue'],
       },
     },
     plugins: { vue: pluginVue },
