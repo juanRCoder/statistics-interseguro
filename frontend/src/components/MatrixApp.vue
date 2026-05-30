@@ -359,15 +359,19 @@ const handleSubmit = async () => {
   display: grid;
   gap: 8px;
   margin-bottom: 1.5rem;
+  justify-items: center;
+  width: 100%;
 }
 
 .cell {
+  width: 100%;
   padding: 10px;
   border: 1px solid #cde;
   border-radius: 8px;
   text-align: center;
   font-size: 0.95rem;
   outline: none;
+  box-sizing: border-box;
   transition: border-color 0.15s;
 }
 
